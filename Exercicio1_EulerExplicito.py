@@ -24,8 +24,8 @@ for i in range(N1-1):
 for i in range(N2-1):
     y2[i+1] = y2[i] + h2*( f(y2[i]) )
 
-plt.plot(x1, y1, 'r.', linewidth=1)
-plt.plot(x2, y2, 'bo')
+plt.plot(x1, y1, 'r.', linewidth=0.5)
+plt.plot(x2, y2, 'b-')
 plt.grid()
 plt.show()
 

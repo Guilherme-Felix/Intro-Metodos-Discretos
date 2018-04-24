@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy import optmize 
+from scipy import optimize 
 
 interval = (0,1)
 h = 1./30
@@ -25,23 +25,23 @@ def F(Y, yk):
 y0 = 0
 # Metodo de Euler Implicito para 30 pontos
 for i in range(N1-1):
-    y1[i+1] = optmize.newton(F, y0, args=(y1[i],))
+    y1[i+1] = optimize.newton(F, y0, args=(y1[i],))
 
 # Metodo de Euler Implicito para 135 pontos
 for i in range(N2-1):
-    y2[i+1] = optmize.newton(F, y0, args=(y2[i],))
+    y2[i+1] = optimize.newton(F, y0, args=(y2[i],))
 
 # Plot 1
 plt.plot(x1, y1, 'ro', linewidth=1)
 plt.grid()
-plt.title("Método de Euler Implícito, 30 pontos")
+plt.title("Metodo de Euler Implicito, 30 pontos")
 plt.savefig("30 pontos.png")
 plt.show()
 
 # Plot 2
-plt.plot(x2, y2, 'ro', linewidth=1)
+plt.plot(x2, y2, 'r.', linewidth=1)
 plt.grid()
-plt.title("Método de Euler Implícito, 135 pontos")
+plt.title("Metodo de Euler Implicito, 135 pontos")
 plt.savefig("135 pontos.png")
 plt.show()
 
