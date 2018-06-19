@@ -24,9 +24,12 @@ for i in range(N1-1):
 for i in range(N2-1):
     y2[i+1] = y2[i] + h2*( f(y2[i]) )
 
-plt.plot(x1, y1, 'r.', linewidth=0.5)
-plt.plot(x2, y2, 'b-')
+plt.plot(x1, y1, 'r.', label="30 pontos",  linewidth=1)
+plt.plot(x2, y2, 'b:', label="135 pontos", linewidth=1)
+plt.title("Metodo de Euler Explicito")
+plt.legend()
 plt.grid()
+plt.savefig("EulerExplicito.png")
 plt.show()
 
 
