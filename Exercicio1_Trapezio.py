@@ -3,20 +3,38 @@ import matplotlib.pyplot as plt
 from scipy import optimize 
 
 '''
-Implementacao do metodo do trapezio.
+    Universidade Federal de Juiz de Fora
+    Departamento de Mecanica Aplicada e Computacional - MAC
+    MAC026 - Introducao aos Metodos Discretos
+    Guilherme Almeida Felix da Silva - 201365504B
+    guilherme.felix@engenharia.ufjf.br
+    
+    Exercicio: Resolver pelo metodo do Trapezio
+    y' = arctan(y), onde:
+    
+    y(0) = 1
+    N1 = 35  pontos
+    N2 = 135 pontos
+    
+    x E [0, 1]
 '''
-
+# Numero de pontos
 N1 = 30 
 N2 = 135
+
+# Passo 
 h1 = 1./N1
 h2 = 1./N2
 
+# Dominio [0, 1]
 x1 = np.arange(0,1,h1)
 x2 = np.arange(0,1,h2)
 
+# Vetor que guarda a solucao
 y1 = np.zeros(N1)
 y2 = np.zeros(N2)
 
+# Condicao Inicial
 y1[0] = 1
 y2[0] = 1
 
@@ -35,7 +53,7 @@ for i in range(N1-1):
 
 # Metodo de Euler Implicito para 135 pontos
 for i in range(N2-1):
-    y2[i+1] = optimize.newton(F, y2[i], args=(h2, y2[i],))
+    y2[i+1] = optimize.newton(F, y2[i], fprime=Fprime, args=(h2, y2[i],))
 
 # Plot 1
 plt.plot(x1, y1, 'r.', label="30 pontos",  linewidth=1)

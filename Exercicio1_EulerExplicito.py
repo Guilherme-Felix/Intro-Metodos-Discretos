@@ -8,14 +8,13 @@ import matplotlib.pyplot as plt
     guilherme.felix@engenharia.ufjf.br
     
     Exercicio: Resolver pelo metodo de Euler Explicito
-    y' = y^2 - g(x), onde:
+    y' = arctan(y), onde:
     
-    g(x) = x^4 - 6x^3 + 12x^2 - 14x +9
-    y(0) = 2
-    h1 = 0.2
-    h2 = 0.1
-    h3 = 0.05
-    x E [0, 1.6]
+    y(0) = 1 
+    N1 = 30  pontos
+    N2 = 135 pontos 
+    
+    x E [0, 1]
 '''
 # Numero de pontos
 N1 = 30 
